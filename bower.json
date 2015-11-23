@@ -1,0 +1,22 @@
+{
+  "name": "angular-obb",
+  "main": "index.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/goldenplanetdk/angular-obb",
+  "authors": [
+    "Steven Pribilinskiy <stepan@goldenplanet.com>"
+  ],
+  "description": "AngularJS modules for OpenBizBox",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "lodash": "~3.10.1"
+  },
+  "devDependencies": {
+    "angular": "~1.4.8"
+  }
+}
