@@ -2,7 +2,7 @@ export default (ngModule) => {
 
 	ngModule.service('googleFonts', function() {
 
-		var WebFont = require('components-webfontloader/webfontloader');
+		var WebFont = require('webfontloader');
 		WebFont.loaded = [];
 
 		this.load = function(fontName) {
