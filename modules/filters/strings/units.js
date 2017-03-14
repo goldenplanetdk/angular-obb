@@ -1,4 +1,6 @@
-export default (ngModule) => {
+const _ = require('lodash');
+
+module.exports = (ngModule) => {
 
 	ngModule.filter('units', function() {
 		return function(value) {
@@ -7,8 +9,9 @@ export default (ngModule) => {
 				return;
 			}
 
-			var match = value.match(/[^0-9.]+/);
+			const match = value.match(/[^0-9.]+/);
+
 			return match && match[0];
 		};
 	});
-}
+};

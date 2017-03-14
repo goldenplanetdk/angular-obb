@@ -1,4 +1,4 @@
-export default (ngModule) => {
+module.exports = (ngModule) => {
 
 	ngModule.directive('dropup', function() {
 		return {
@@ -9,4 +9,4 @@ export default (ngModule) => {
 			}
 		};
 	});
-}
+};

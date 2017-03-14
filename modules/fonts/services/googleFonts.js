@@ -1,8 +1,11 @@
-export default (ngModule) => {
+const _ = require('lodash');
+
+module.exports = (ngModule) => {
 
 	ngModule.service('googleFonts', function() {
 
-		var WebFont = require('webfontloader');
+		const WebFont = require('webfontloader');
+
 		WebFont.loaded = [];
 
 		this.load = function(fontName) {
@@ -11,8 +14,11 @@ export default (ngModule) => {
 			fontName = [].concat(fontName);
 
 			// load only new fonts
-			var fontNames = _.difference(fontName, WebFont.loaded);
-			if (!fontNames.length) return;
+			const fontNames = _.difference(fontName, WebFont.loaded);
+
+			if (!fontNames.length) {
+				return;
+			}
 
 			WebFont.load({
 				google: {
@@ -23,4 +29,4 @@ export default (ngModule) => {
 			WebFont.loaded = WebFont.loaded.concat(fontNames);
 		};
 	});
-}
+};

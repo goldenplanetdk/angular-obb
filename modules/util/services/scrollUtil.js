@@ -1,4 +1,4 @@
-export default (ngModule) => {
+module.exports = (ngModule) => {
 
 	ngModule.factory('scrollUtil', function() {
 		return {
@@ -15,13 +15,13 @@ export default (ngModule) => {
 				}
 
 				// calculate top position for active element
-				var targetElTopPosition = containerEl[0].scrollTop + targetEl.position().top,
-					containerHalfHeight = containerEl.height() / 2,
-					lastPageMiddlePosition = containerEl.prop('scrollHeight') - containerHalfHeight,
-					offsetTop = (targetElTopPosition < lastPageMiddlePosition) ? containerHalfHeight : 0;
+				const targetElTopPosition = containerEl[0].scrollTop + targetEl.position().top;
+				const containerHalfHeight = containerEl.height() / 2;
+				const lastPageMiddlePosition = containerEl.prop('scrollHeight') - containerHalfHeight;
+				const offsetTop = (targetElTopPosition < lastPageMiddlePosition) ? containerHalfHeight : 0;
 
 				containerEl[0].scrollTop = targetElTopPosition - offsetTop;
 			},
 		};
 	});
-}
+};

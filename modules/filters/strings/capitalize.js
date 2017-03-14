@@ -1,4 +1,6 @@
-export default (ngModule) => {
+const _ = require('lodash');
+
+module.exports = (ngModule) => {
 
 	ngModule.filter('capitalize', function() {
 		return function(string) {
@@ -10,4 +12,4 @@ export default (ngModule) => {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		};
 	});
-}
+};

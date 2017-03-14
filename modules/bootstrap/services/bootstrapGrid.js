@@ -1,4 +1,4 @@
-export default (ngModule) => {
+module.exports = (ngModule) => {
 
 	/**
 	 * Bootstrap grid section's width in ratio that is converted to bs grid columns count
@@ -8,7 +8,7 @@ export default (ngModule) => {
 	 */
 	ngModule.factory('bootstrapGrid', function() {
 
-		var bsGrid = {
+		const bsGrid = {
 			gridCols: 24,
 			colWidth(gridWidthRatio = 1) {
 				return Math.floor(bsGrid.gridCols * gridWidthRatio);
@@ -21,4 +21,4 @@ export default (ngModule) => {
 
 		return bsGrid;
 	});
-}
+};

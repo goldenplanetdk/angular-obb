@@ -1,4 +1,6 @@
-export default (ngModule) => {
+const _ = require('lodash');
+
+module.exports = (ngModule) => {
 
 	ngModule.directive('incrementDecrement', function(cssUtil) {
 		return {
@@ -7,9 +9,9 @@ export default (ngModule) => {
 
 				element.on('keydown wheel', function(event) {
 
-					var {number = 1, unit = 'px'} = cssUtil.splitLengthUnits(event.target.value),
-						delta,
-						increase = true;
+					let {number = 1, unit = 'px'} = cssUtil.splitLengthUnits(event.target.value);
+					let delta;
+					let increase = true;
 
 					if (event.type == 'wheel') {
 						if (event.target != document.activeElement) return;
@@ -32,12 +34,14 @@ export default (ngModule) => {
 
 					number = _.round(Math.max(1, _.add(number, delta)), 2);
 
-					var fontSize = `${number}${unit || ''}`;
+					const fontSize = `${number}${unit || ''}`;
+
 					$(event.target).val(fontSize).change();
+
 					event.preventDefault();
 					event.stopPropagation();
 				});
 			}
 		};
 	});
-}
+};

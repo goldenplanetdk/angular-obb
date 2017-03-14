@@ -1,7 +1,7 @@
-var ngModule = angular.module('obb', []);
+const angular = require('angular');
+const ngModule = angular.module('obb', []);
 
-// Require modules from subdirectories
-var requireContext = require.context('.', true, /^\.\/.*\/(?!index).*\.js$/);
-requireContext.keys().map((path) => {
-	requireContext(path)(ngModule);
-});
+// Require services from subdirectories
+// Exclude index files of modules from `obb.*` namespace
+const requireContext = require.context('./modules', true, /^\.\/.*\/(?!index).*\.js$/);
+requireContext.keys().map(path => requireContext(path)(ngModule));

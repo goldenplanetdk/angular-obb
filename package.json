@@ -1,7 +1,7 @@
 {
   "name": "@goldenplanet/angular",
   "description": "AngularJS modules for OpenBizBox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     "Steven Pribilinskiy <stepan@goldenplanet.com>"
   ],
@@ -11,7 +11,7 @@
     "webfontloader": "1.6.24"
   },
   "devDependencies": {
-    "angular": "~1.4.8",
-    "lodash": "~3.10.1"
+    "angular": "~1.6.1",
+    "lodash": "~4.17.4"
   }
 }

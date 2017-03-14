@@ -1,4 +1,4 @@
-export default (ngModule) => {
+module.exports = (ngModule) => {
 
 	ngModule.directive('blurOnEnterKey', function(cssUtil) {
 		return {
@@ -15,4 +15,4 @@ export default (ngModule) => {
 			}
 		};
 	});
-}
+};

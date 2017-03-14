@@ -1,4 +1,6 @@
-export default (ngModule) => {
+const _ = require('lodash');
+
+module.exports = (ngModule) => {
 
 	ngModule.filter('pushUnique', function() {
 		return function(array, value) {
@@ -14,4 +16,4 @@ export default (ngModule) => {
 			return array;
 		};
 	});
-}
+};
