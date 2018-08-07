@@ -5,7 +5,7 @@ module.exports = (ngModule) => {
 			restrict: 'A',
 			link: function(scope, element) {
 
-				element.find('[uib-dropdown], .dropdown').andSelf().addClass('dropup');
+				element.find('[uib-dropdown], .dropdown').addBack().addClass('dropup');
 			}
 		};
 	});
